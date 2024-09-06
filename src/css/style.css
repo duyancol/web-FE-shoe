@@ -3770,7 +3770,7 @@ span.mail a:hover{
 	}
   
 	.slide {
-	  width: 200px; /* Giảm kích thước của slide */
+	  width: 6%; /* Giảm kích thước của slide */
 	  height: 150px; /* Giảm chiều cao slide */
 	  line-height: 150px;
 	  font-size: 18px;
@@ -3867,3 +3867,23 @@ span.mail a:hover{
 		}
 	  }
 	  
+	  /* Media Queries cho màn hình điện thoại */
+@media (max-width: 600px) {
+    .shopping {
+        width: 70px; /* Giảm kích thước cho màn hình nhỏ */
+        height: 70px; /* Giảm chiều cao */
+        border-radius: 50%; /* Giảm bán kính bo góc */
+        margin-right: 50%; /* Giảm khoảng cách bên trái */
+    }
+
+    .s {
+        margin-top: 20px; /* Giảm khoảng cách trên */
+    }
+	.btn-list-oder {
+		margin-left: 75%;
+	}
+	.shopping img{
+		padding: auto;
+		margin-top: 20%;
+	}
+}
