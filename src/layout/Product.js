@@ -359,12 +359,12 @@ React.useEffect(
         <div>
         <div className="mid-header" >
        
-    <div className="wrap" >
+    
    
-        <div className="mid-grid-left logo mid-grid-left1"  >
+        <div className= "logo "  >
       
           
-          <input
+        <input
         id='ser'
           type="text"
           value={searchTerm}
@@ -391,7 +391,7 @@ React.useEffect(
         )}
        
         <button className='btn btn-primary btn_voice' onClick={startListening}><i class="fa-solid fa-microphone"></i></button>
-        </div></div>
+        </div>
       </div>
        
     

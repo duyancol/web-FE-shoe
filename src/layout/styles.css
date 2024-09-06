@@ -80,6 +80,15 @@
   background: rgba(213, 212, 224, 0.008);
   border-radius: 5px;
 }
+@media only screen and (max-width: 600px) {
+  .wapper {
+    width: 90%; /* Điều chỉnh kích thước chiều rộng cho phù hợp với màn hình điện thoại */
+    margin-left: 5%; /* Căn giữa theo chiều ngang */
+    padding: 20px; /* Giảm padding để phù hợp với màn hình nhỏ hơn */
+  }
+  
+}
+
 .p{
   color: #fff;
   font-size: 30px;

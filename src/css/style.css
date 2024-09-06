@@ -3762,4 +3762,108 @@ span.mail a:hover{
 	height: 94%;
 	margin-bottom: 2%; /* Giữ tỷ lệ của ảnh */
   }
+  @media only screen and (max-width: 600px) {
+	.slider-container {
+	  width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng màn hình nhỏ */
+	  height: 250px; /* Giảm chiều cao cho phù hợp với màn hình điện thoại */
+	  margin-top: 10%; /* Điều chỉnh margin-top nếu cần */
+	}
+  
+	.slide {
+	  width: 200px; /* Giảm kích thước của slide */
+	  height: 150px; /* Giảm chiều cao slide */
+	  line-height: 150px;
+	  font-size: 18px;
+	}
+  
+	.slider-btn {
+	  padding: 5px; /* Giảm kích thước nút cho phù hợp */
+	}
 	
+	.slider-wrapper {
+	  margin-left: 0; /* Điều chỉnh lại margin nếu cần */
+	  transform: translateY(20%);
+	 margin-left: 26%;
+	   /* Giảm tỷ lệ dịch chuyển cho màn hình nhỏ */
+	}}
+	
+	.logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		margin: 20px 0;
+	  }
+	  
+	  #ser {
+		width: 300px;
+		padding: 10px;
+		border-radius: 5px;
+		border: 1px solid #ccc;
+		z-index: 1; /* Đảm bảo input luôn nằm phía trên */
+	  }
+	  
+	  .btn_voice {
+		margin-left: 10px;
+		padding: 10px 15px;
+		background-color: #007bff;
+		border: none;
+		border-radius: 5px;
+		color: white;
+		cursor: pointer;
+	  }
+	  
+	  .btn_voice i {
+		font-size: 1.2em;
+	  }
+	  
+	  .search-results-container {
+		position: absolute;
+		top: calc(100% + 5px); /* Hiển thị ngay bên dưới input, có khoảng cách 5px */
+		left: 0;
+		width: 100%;
+		background-color: white;
+		border: 1px solid #ccc;
+		max-height: 200px;
+		overflow-y: auto;
+		z-index: 100; /* Đảm bảo phần kết quả tìm kiếm nằm trên các phần tử khác */
+	  }
+	  
+	  .search-results-list {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	  }
+	  
+	  .search-results-list li {
+		padding: 10px;
+		cursor: pointer;
+		border-bottom: 1px solid #ccc;
+	  }
+	  
+	  .search-results-list li:hover {
+		background-color: #f0f0f0;
+	  }
+	  
+	  /* Media queries cho responsive */
+	  @media (max-width: 600px) {
+		.logo {
+		  width: 200%;
+		  
+		}
+	  
+		#ser {
+			position: relative;
+		  width: 100%;
+		  margin-left: 5px;
+		}
+	  
+		.btn_voice {
+		  width: 100%;
+		}
+	  
+		.search-results-container {
+		  width: 100%;
+		}
+	  }
+	  
