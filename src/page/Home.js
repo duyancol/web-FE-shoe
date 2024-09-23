@@ -6,12 +6,14 @@ import MegaMenu from '../layout/MegaMenu';
 import Footer from '../layout/Footer';
 import '../css/style.css';
 import '../css/test.css';
+import About from '../layout/About';
 export default function Home({cartItemCount}) {
   return (
     <>
      <Header cartItemCount={cartItemCount} />
      <MegaMenu></MegaMenu>
      <Slideer></Slideer>
+     <About></About>
      <Product />
      <Footer></Footer>
     </>

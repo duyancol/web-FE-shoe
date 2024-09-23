@@ -353,7 +353,7 @@ React.useEffect(
   
     <div className="wrap">
     <div className="price-rage">
-        <h3>Weekly selection:</h3>
+       
         <div className='search'>
        
         <div>
@@ -372,7 +372,7 @@ React.useEffect(
          
           onFocus={() => setIsInputFocused(true)}
           onBlur={() => setIsInputFocused(false)}
-          placeholder="       Search for a product"
+          placeholder="Search for a product"
         />
         {searchResults.length > 0 && (
           <div className="search-results-container">

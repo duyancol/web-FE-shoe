@@ -3886,4 +3886,73 @@ span.mail a:hover{
 		padding: auto;
 		margin-top: 20%;
 	}
+	.mid-grid-left{
+		padding: 0px;
+
+	}
+}
+.search{
+	width: 25%;
+}
+/* Style cho background hình chữ nhật */
+.background {
+    width: 100%;
+    height: 400px; /* Chiều cao tùy ý */
+    background-color: #f2f2f2; /* Màu nền */
+    position: relative;
+    overflow: hidden; /* Đảm bảo các phần tử không tràn ra ngoài */
+}
+
+/* Container chứa các lục giác */
+.hex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 10px; /* Đẩy container xuống từ phía trên */
+    height: 100%;
+	margin-left: -50%;
+}
+
+/* Các dòng lục giác */
+.hexagon-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px; /* Khoảng cách giữa các dòng */
+}
+
+/* Tạo hình lục giác */
+.hexagon {
+    width: 100px;
+    height: 57.74px; /* Để giữ đúng tỉ lệ */
+    background-color: #3498db;
+    position: relative;
+    margin: 10px;
+    transition: transform 0.3s ease; /* Thêm hiệu ứng nổi khi hover */
+}
+
+.hexagon:before,
+.hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+
+.hexagon:before {
+    bottom: 100%;
+    border-bottom: 28.87px solid #3498db;
+}
+
+.hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 28.87px solid #3498db;
+}
+
+/* Để các dòng chẵn lục giác trượt một nửa lục giác */
+.hexagon-row:nth-child(even) {
+    transform: translateX(55px);
 }

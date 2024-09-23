@@ -39,12 +39,6 @@ function ProductDetail({onAddToCart,cartItemCount,open,handleClose,Alert,handleC
   };
   
   useEffect(() => {
-    // fetch(`http://localhost:8080/api/v1/auth/getProduct/${id}`)
-    //   .then(res => res.json())
-    //   .then(data => setProduct(data))
-      
-    //   .catch(err => console.error(err));
-   
     loaddata();
     loadCheckreport();
     
@@ -72,7 +66,7 @@ function ProductDetail({onAddToCart,cartItemCount,open,handleClose,Alert,handleC
 
   const loadCheckreport =()=>{
     const iduser = localStorage.getItem("id");
-    axios.get(`http://localhost:8080/api/v1/auth/getReport/${id}/${iduser}`)
+    axios.get(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/getReport/${id}/${iduser}`)
     .then((response) => {
      
       localStorage.setItem('checkReport',JSON.stringify(response.data));
@@ -117,7 +111,7 @@ const onSupmit= async(e)=>{
          }
        }
        e.preventDefault();
-       await axios.post(`http://localhost:8080/api/v1/auth/addReportStar/${product.id}`,formData,config)
+       await axios.post(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/addReportStar/${product.id}`,formData,config)
      
        loaddata();
        handleClickOpenD()
