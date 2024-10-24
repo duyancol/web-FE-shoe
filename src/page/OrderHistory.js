@@ -154,7 +154,7 @@ export default function OrderHistory({cartItemCount}) {
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-2">
-                        <img src={"http://localhost:8080/images/img/"+product.img}
+                        <img src={"https://raw.githubusercontent.com/duyancol/shop-shoe/master/src/main/resources/static/images/img/"+product.img}
                           class="img-fluid" alt=""/>
                       </div>
                       <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
