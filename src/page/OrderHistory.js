@@ -44,7 +44,7 @@ export default function OrderHistory({cartItemCount}) {
       // Xử lý submit
      
 
-      axios(`https://shop-shoe-1-heb5.onrender.com/updateStatusHuy?id=${id}
+      axios(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/updateStatusHuy?id=${id}
       `, {
         method: "PUT", 
         data: {
@@ -78,7 +78,7 @@ export default function OrderHistory({cartItemCount}) {
       
     }, []);
     const loadOder = (d)=>{
-      fetch(`https://shop-shoe-1-heb5.onrender.com/order/${iduser}`)
+      fetch(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/order/${iduser}`)
       .then(res => res.json())
       .then(data => setOrder(data))
       .catch(err => console.error(err));
@@ -87,7 +87,7 @@ export default function OrderHistory({cartItemCount}) {
     const oderDetailID = (d)=>{
       handleOpenL();
       handleClickOpen();
-      fetch(`https://shop-shoe-1-heb5.onrender.com/cart/${d}`)
+      fetch(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/cart/${d}`)
         .then(res => res.json())
         .then(data => setOrderDetail(data))
         .catch(err => console.error(err));
