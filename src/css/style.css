@@ -3671,15 +3671,15 @@ span.mail a:hover{
 	background-color: white;
 }
 .slider-container {
-	perspective: 1000px; /* Tạo hiệu ứng 3D */
+	perspective: 1000px;
 	position: relative;
 	width: 90vw;
 	height: 400px;
 	margin: auto;
 	margin-top: 5%;
-	background-size: cover; /* Đảm bảo ảnh bao phủ toàn bộ container */
-  background-position: center; /* Căn giữa ảnh */
-  background-repeat: no-repeat; /* Ngăn ảnh lặp lại */
+	background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
   transition: background-image 0.5s ease-in-out; 
   border-radius: 5px;
   }
@@ -3690,9 +3690,9 @@ span.mail a:hover{
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.5); /* Màu mờ với độ trong suốt 50% */
-	z-index: 1; /* Đặt lên trên nền để hiệu ứng mờ áp dụng */
-	pointer-events: none; /* Đảm bảo nó không ảnh hưởng đến các phần tử bên dưới */
+	background: rgba(0, 0, 0, 0.5); 
+	z-index: 1; 
+	pointer-events: none; 
 	z-index: -100;
   }
   .slider-wrapper {
@@ -3753,38 +3753,38 @@ span.mail a:hover{
   
   .slide_img {
 	margin-top: 2%;
-	width: 100%; /* Chiếm toàn bộ chiều ngang của thẻ chứa */
-	height: 100%; /* Chiếm toàn bộ chiều cao của thẻ chứa */
-	object-fit: cover; /* Giúp ảnh phủ đầy mà không bị méo */
+	width: 100%; 
+	height: 100%; 
+	object-fit: cover; 
   }
   .slide_img {
 	width: 100%;
 	height: 94%;
-	margin-bottom: 2%; /* Giữ tỷ lệ của ảnh */
+	margin-bottom: 2%; 
   }
   @media only screen and (max-width: 600px) {
 	.slider-container {
-	  width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng màn hình nhỏ */
-	  height: 250px; /* Giảm chiều cao cho phù hợp với màn hình điện thoại */
-	  margin-top: 10%; /* Điều chỉnh margin-top nếu cần */
+	  width: 100%;
+	  height: 250px;
+	  margin-top: 10%; 
 	}
   
 	.slide {
-	  width: 6%; /* Giảm kích thước của slide */
-	  height: 150px; /* Giảm chiều cao slide */
+	  width: 6%; 
+	  height: 150px; 
 	  line-height: 150px;
 	  font-size: 18px;
 	}
   
 	.slider-btn {
-	  padding: 5px; /* Giảm kích thước nút cho phù hợp */
+	  padding: 5px;
 	}
 	
 	.slider-wrapper {
-	  margin-left: 0; /* Điều chỉnh lại margin nếu cần */
+	  margin-left: 0;
 	  transform: translateY(20%);
 	 margin-left: 26%;
-	   /* Giảm tỷ lệ dịch chuyển cho màn hình nhỏ */
+	  
 	}}
 	
 	.logo {
@@ -3800,7 +3800,7 @@ span.mail a:hover{
 		padding: 10px;
 		border-radius: 5px;
 		border: 1px solid #ccc;
-		z-index: 1; /* Đảm bảo input luôn nằm phía trên */
+		z-index: 1; 
 	  }
 	  
 	  .btn_voice {
@@ -3819,14 +3819,14 @@ span.mail a:hover{
 	  
 	  .search-results-container {
 		position: absolute;
-		top: calc(100% + 5px); /* Hiển thị ngay bên dưới input, có khoảng cách 5px */
+		top: calc(100% + 5px); 
 		left: 0;
 		width: 100%;
 		background-color: white;
 		border: 1px solid #ccc;
 		max-height: 200px;
 		overflow-y: auto;
-		z-index: 100; /* Đảm bảo phần kết quả tìm kiếm nằm trên các phần tử khác */
+		z-index: 100; 
 	  }
 	  
 	  .search-results-list {
@@ -3845,7 +3845,7 @@ span.mail a:hover{
 		background-color: #f0f0f0;
 	  }
 	  
-	  /* Media queries cho responsive */
+	  
 	  @media (max-width: 600px) {
 		.logo {
 		  width: 200%;
@@ -3867,17 +3867,17 @@ span.mail a:hover{
 		}
 	  }
 	  
-	  /* Media Queries cho màn hình điện thoại */
+	
 @media (max-width: 600px) {
     .shopping {
-        width: 70px; /* Giảm kích thước cho màn hình nhỏ */
-        height: 70px; /* Giảm chiều cao */
-        border-radius: 50%; /* Giảm bán kính bo góc */
-        margin-right: 50%; /* Giảm khoảng cách bên trái */
+        width: 70px; 
+        height: 70px; 
+        border-radius: 50%; 
+        margin-right: 50%; 
     }
 
     .s {
-        margin-top: 20px; /* Giảm khoảng cách trên */
+        margin-top: 20px;
     }
 	.btn-list-oder {
 		margin-left: 75%;
@@ -3894,65 +3894,220 @@ span.mail a:hover{
 .search{
 	width: 25%;
 }
-/* Style cho background hình chữ nhật */
+
 .background {
     width: 100%;
-    height: 400px; /* Chiều cao tùy ý */
-    background-color: #f2f2f2; /* Màu nền */
+    height: 60vh;
+    background-color: #f2f2f200;
     position: relative;
-    overflow: hidden; /* Đảm bảo các phần tử không tràn ra ngoài */
+    overflow: hidden;
 }
 
-/* Container chứa các lục giác */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+}
+
 .hex-container {
     display: flex;
     flex-direction: column;
+	margin-top: -5%;
     justify-content: center;
-    align-items: center;
-    position: relative;
-    top: 10px; /* Đẩy container xuống từ phía trên */
+    width: 30%;
     height: 100%;
-	margin-left: -50%;
 }
 
-/* Các dòng lục giác */
+
 .hexagon-row {
     display: flex;
     justify-content: center;
-    margin-bottom: 15px; /* Khoảng cách giữa các dòng */
+    margin-bottom: -10px; 
 }
 
-/* Tạo hình lục giác */
+
 .hexagon {
     width: 100px;
-    height: 57.74px; /* Để giữ đúng tỉ lệ */
-    background-color: #3498db;
+    height: 57.74px; 
+    background-size: 400px 400px; 
     position: relative;
-    margin: 10px;
-    transition: transform 0.3s ease; /* Thêm hiệu ứng nổi khi hover */
+    margin-left: 2px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0; 
 }
 
-.hexagon:before,
-.hexagon:after {
-    content: "";
+
+.hexagon.enter {
+    opacity: 1; 
+    transform: translateX(0); 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.color_h4{
+	color: white;
+}
+.about_h1_color{
+	font-size: 30px;
+	color: #e9900a;
+	font-weight: bold;
+	margin-top: 5%;
+	margin-left: 5%;
+}
+.hexagon.exit {
+    opacity: 0; 
+    transform: translateX(-100px); 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+	margin-top: -5%;
+}
+
+
+.image-content {
+	margin-top: -5%;
+    width: 50%; 
+    text-align: center; 
+}
+
+.hexagon-row:nth-child(even) .hexagon {
+    background-position: 0 0; 
+}
+
+
+.hexagon-row:nth-child(odd) .hexagon {
+    background-position: -50px 0;
+}
+
+
+.hexagon-row:nth-child(odd) {
+    transform: translateX(50px); 
+}
+
+
+.hexagon:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.size-grid {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr); /* 5 ô mỗi hàng */
+	gap: 10px;
+	margin-top: 20px;
+  }
+  
+  .size-button {
+	padding: 10px;
+	font-size: 16px;
+	border: 2px solid #ddd;
+	background-color: white;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  .size-button:hover {
+	background-color: #f0f0f0;
+  }
+  
+  .size-button.selected {
+	background-color: #4caf50;
+	color: white;
+  }
+  html, body {
+	margin: 0;
+	scroll-behavior: smooth;
+  }
+  
+  .scroll-container {
+	height: auto;
+  }
+  
+  .scroll-section {
+	
+	box-sizing: border-box;
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .scroll-section:nth-child(odd) {
+	
+  }
+  
+  .scroll-section:nth-child(even) {
+
+  }
+  
+ 
+  .scroll-section:not(:last-child) {
+	margin-bottom: 50px;
+  }
+  .header_content {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000; 
+	
+  }
+  
+  .scroll-container {
+	margin-top: 0px; 
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+}
+
+.animated-button {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #e9900a; 
+    border: none;
+    border-radius: 30px; 
+    cursor: pointer;
+    overflow: hidden; 
+    outline: none; 
+}
+
+.animated-button::after {
+    content: '';
     position: absolute;
-    width: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
+    top: 50%;
+    left: 50%;
+    width: 120%; 
+    height: 120%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%; 
+    transform: translate(-50%, -50%); 
+    animation: rotate 1.5s linear infinite; 
+    z-index: 0; 
 }
 
-.hexagon:before {
-    bottom: 100%;
-    border-bottom: 28.87px solid #3498db;
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg); 
+    }
 }
 
-.hexagon:after {
-    top: 100%;
-    width: 0;
-    border-top: 28.87px solid #3498db;
+.animated-button:hover {
+    color: #000; 
+    z-index: 1; 
 }
 
-/* Để các dòng chẵn lục giác trượt một nửa lục giác */
-.hexagon-row:nth-child(even) {
-    transform: translateX(55px);
+.animated-button:focus {
+    outline: none; 
 }

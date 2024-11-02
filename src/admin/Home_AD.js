@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 axios.interceptors.request.use(config => {
-  config.headers['Access-Control-Allow-Origin'] = 'http://localhost:8080'; // Thay thế bằng URL của Spring Boot server
+  config.headers['Access-Control-Allow-Origin'] = 'https://shop-shoe-1-heb5.onrender.com'; // Thay thế bằng URL của Spring Boot server
   config.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE';
   config.headers['Access-Control-Allow-Headers'] = '*';
   return config;
@@ -22,7 +22,7 @@ export default function Home_AD() {
         const fetchData = async () => {
           try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://localhost:8080/api/v1/admin/show', {
+            const response = await axios.get('https://shop-shoe-1-heb5.onrender.com/api/v1/admin/show', {
               headers: {
                 'Authorization': `Bearer ${token}`,
               },
