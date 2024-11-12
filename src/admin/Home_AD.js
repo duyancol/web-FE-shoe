@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 axios.interceptors.request.use(config => {
-  config.headers['Access-Control-Allow-Origin'] = 'https://shop-shoe-1-heb5.onrender.com'; // Thay thế bằng URL của Spring Boot server
+  config.headers['Access-Control-Allow-Origin'] = 'https://shop-shoe-1-heb5.onrender.com'; 
   config.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE';
   config.headers['Access-Control-Allow-Headers'] = '*';
   return config;
@@ -13,11 +13,6 @@ axios.interceptors.request.use(config => {
 export default function Home_AD() {
     let navigate=useNavigate();
     const [products, setProducts] = useState([]);
-
-   
-    // Tạo instance của axios và đặt header Authorization
-   
-
     useEffect(() => {
         const fetchData = async () => {
           try {

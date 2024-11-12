@@ -38,8 +38,9 @@ import ResetpassWord from './page/ResetpassWord';
 import PageNotError from './page/PageNotError';
 import FeedBack from './layout/FeedBack';
 import Profile from './layout/Profile';
+import ScrollToTop from './page/ScrollToTop';
 
-
+import { AnimatePresence, motion } from 'framer-motion';
 
 
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -161,11 +162,24 @@ const initialOptions = {
   intent: "capture",
 };
 
+
+  const pageVariants = {
+    initial: { opacity: 0, x: "-100vw" },
+    in: { opacity: 1, x: 0 },
+    out: { opacity: 0, x: "100vw" },
+  };
+
+  const pageTransition = {
+    type: "tween",
+    ease: "anticipate",
+    duration: 0.5,
+  };
   return (
    
     <div className="App" key={user.isLogin}>  
    
  
+   
  
    
    
@@ -173,9 +187,9 @@ const initialOptions = {
   
    
       <Router>
-     
+      <ScrollToTop />
+      <AnimatePresence mode="wait">
         <Routes>
-       
           <Route exact path='/' element={< Home cartItemCount={cartItemCount}/ > }> </Route>
           <Route className="node"  path='/feedback' element={<FeedBack />}></Route>
           <Route className="node"  path='/getProduct/:id' element={<ViewProduct />}></Route>
@@ -192,8 +206,26 @@ const initialOptions = {
           <Route className="node" exact path='/getProFile' element={<Profile />}></Route>
          
           <Route exact path='/order/:iduser' element={<OrderHistory cartItemCount={cartItemCount}/>}></Route>
-          
-          <Route path="/products/:id" element={<ProductDetail  onAddToCart={handleAddToCart} cartItemCount={cartItemCount}  open={open} handleClose={handleClose} Alert={Alert} handleClick={handleClick} />} />
+          <Route
+          path="/products/:id"
+          element={
+            <motion.div
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                exit={{ opacity: 0 }} 
+                transition={{ duration: 3 }}
+              >
+            <ProductDetail
+              onAddToCart={handleAddToCart}
+              cartItemCount={cartItemCount}
+              open={open}
+              handleClose={handleClose}
+              Alert={Alert}
+              handleClick={handleClick}
+            />
+            </motion.div>
+          }
+        />
           <Route exact path='/detailProduct/:id' element={<DetailProduct/> }></Route>
           <Route exact path='/editProduct/:id' element={<EditProduct/>}></Route>
           <Route path="/cart" element={
@@ -211,7 +243,7 @@ const initialOptions = {
         </Routes> 
     
      
-        
+        </AnimatePresence>
       </Router>
      
       
