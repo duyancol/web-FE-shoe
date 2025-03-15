@@ -159,8 +159,8 @@ section .color:nth-child(3){
 
 .button {
   display: inline-block;
-  border-radius: 4px;
-  background-color: #0066cc;
+  border-radius: 50%;
+  background-color: white;
   border: none;
   color: #ffffff;
   text-align: center;

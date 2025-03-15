@@ -5,7 +5,6 @@ import { FacebookProvider, Comments } from 'react-facebook';
 import axios from 'axios';
 import React,{useState,useEffect} from 'react'
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
-//import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import AddProduct from './product/AddProduct';
 import EditProduct  from './product/EditProduct';
@@ -177,15 +176,6 @@ const initialOptions = {
   return (
    
     <div className="App" key={user.isLogin}>  
-   
- 
-   
- 
-   
-   
-   
-  
-   
       <Router>
       <ScrollToTop />
       <AnimatePresence mode="wait">
@@ -213,7 +203,7 @@ const initialOptions = {
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
                 exit={{ opacity: 0 }} 
-                transition={{ duration: 3 }}
+                transition={{ duration: 1 }}
               >
             <ProductDetail
               onAddToCart={handleAddToCart}
@@ -253,129 +243,6 @@ const initialOptions = {
 };
 
 export default App;
-
-
-
-// import React, { useState,useEffect  } from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Cart from './addToCart/Cart';
-// import ProductDetail from './addToCart/ProductDetail';
-// import ProductList from './addToCart/ProductList ';
-// import { Link } from 'react-router-dom';
-
-// function App() {
-// const [cartItems, setCartItems] = useState([]);
-
-// useEffect(() => {
-//   const cartItemsFromStorage = localStorage.getItem('cartItems');
-//   if (cartItemsFromStorage) {
-//     setCartItems(JSON.parse(cartItemsFromStorage));
-//   }
-// }, []);
-
-// useEffect(() => {
-//   localStorage.setItem('cartItems', JSON.stringify(cartItems));
-// }, [cartItems]);
-// const handleAddToCart = product => {
-//   const existingCartItem = cartItems.find(item => item.id === product.id);
-//   if (existingCartItem) {
-//     setCartItems(prevCartItems => {
-//       const newCartItems = prevCartItems.map(item => {
-//         if (item.id === product.id) {
-//           return { ...item, quantity: item.quantity + 1 };
-//         }
-//         return item;
-//       });
-//       return newCartItems;
-//     });
-//   } else {
-//     setCartItems(prevCartItems => [
-//       ...prevCartItems,
-//       { ...product, quantity: 1 },
-//     ]);
-//   }
-
-// };
- 
-// // useEffect(() => {
-// //   const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
-// //   if (storedCartItems) {
-// //     setCartItems(storedCartItems);
-// //   }
-// // }, []);
-
-// // useEffect(() => {
-// //   localStorage.setItem('cartItems', JSON.stringify(cartItems));
-// // }, [cartItems]);
-// // const handleRemoveCartItem = (id) => {
-// //   setCartItems(prevCartItems => prevCartItems.filter(item => item.id !== id));
-// // };
-// const handleRemoveCartItem = product => {
-//   setCartItems(prevCartItems =>
-//     prevCartItems.filter(item => item.id !== product.id)
-//   );
-// };
-
-// // const handleAddToCart = product => {
-// // const existingCartItem = cartItems.find(item => item.id === product.id);
-// //   if (existingCartItem) {
-// // setCartItems(prevCartItems => {
-// // const newCartItems = prevCartItems.map(item => {
-// // if (item.id === product.id) {
-// // return { ...item, quantity: item.quantity + 1 };
-// // }
-// // return item;
-// // });
-// // return newCartItems;
-// // });
-// // } else {
-// // setCartItems(prevCartItems => [
-// // ...prevCartItems,
-// // { ...product, quantity: 1 },
-// // ]);
-// // }
-// // };
-// // // useEffect(() => {
-// // //   const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
-// // //   if (storedCartItems) {
-// // //     setCartItems(storedCartItems);
-// // //   }
-// // // }, []);
-
-// // // useEffect(() => {
-// // //   localStorage.setItem('cartItems', JSON.stringify(cartItems));
-// // // }, [cartItems]);
-// return (
-
-// <Router>
-// <div>
-//   <nav>
-//     <ul>
-//       <li>
-//         <Link to="/">Product List</Link>
-//       </li>
-//       <li>
-//         <Link to="/cart">Cart</Link>
-//       </li>
-//     </ul>
-//   </nav>
-//   <Routes>
-//     <Route path="/" element={<ProductList onAddToCart={handleAddToCart} />} />
-//     <Route path="/products/:id" element={<ProductDetail onAddToCart={handleAddToCart} />} />
-//     <Route path="/cart" element={
-//       <Cart cartItems={cartItems} setCartItems={setCartItems}
-//       onRemoveCartItem={handleRemoveCartItem}
-//        />
-     
-//     } />
-//   </Routes>
-// </div>
-// </Router>
-// );
-// }
-
-// export default App;
-
 
 
 

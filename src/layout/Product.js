@@ -97,7 +97,7 @@ React.useEffect(
     // similar to componentDidMount()
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
-    const baseURL = "https://shop-shoe-1-heb5.onrender.com/api/v1/auth/get3ProductNew";
+    const baseURL = "https://shop-shoe-production.up.railway.app/api/v1/auth/get3ProductNew";
     const [rows, setRows] = useState([]);
     const [rowdata, setRowdata] = useState([]);
   
@@ -139,7 +139,7 @@ React.useEffect(
   
   
     useEffect(() => {
-      fetch("https://shop-shoe-1-heb5.onrender.com/api/v1/auth/get3ProductNew")
+      fetch("https://shop-shoe-production.up.railway.app/api/v1/auth/get3ProductNew")
         .then(res => res.json())
         .then(
           (result) => {
@@ -157,7 +157,7 @@ React.useEffect(
     }, [])
     const clickCart1=()=>{
       const count =document.getElementsByClassName("count").length +3;
-      fetch(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/getNext3Product/${count}/0`)
+      fetch(`https://shop-shoe-production.up.railway.app/api/v1/auth/getNext3Product/${count}/0`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -583,9 +583,7 @@ React.useEffect(
 </div> 
 <div className='btn-list-oder'>
    
-<Link className='btn btn-primary shopping s t' to={`/order/${iduser}`}><img src='../images/clock.png'></img></Link><br></br>
 
-<Link className='btn btn-primary shopping s t' to={`/getProFile`}><img src='../images/user.png'></img></Link>
 </div>
     </div>
   )
