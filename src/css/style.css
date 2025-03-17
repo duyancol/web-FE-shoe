@@ -4247,3 +4247,21 @@ image-content h2 {
 .back_gr{
 	background-color: #021325;
 }
+.fade-in {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 5s ease-out, transform 5s ease-out;
+  }
+  
+  .fade-in.show {
+	opacity: 1;
+	transform: translateY(0);
+  }
+  .background{
+	height: 100%;
+  }
+  .background-motion{
+	margin-top: 200px;
+	margin-bottom: 200px;
+  }
+  

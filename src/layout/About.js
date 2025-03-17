@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
 
-
+import { motion } from "framer-motion";
 export default function About() {
   const hexagonRows = [
     [{ x: 0, y: 0 }, { x: -100, y: 0 }, { x: -200, y: 0 }, { x: -300, y: 0 }],
@@ -9,9 +9,30 @@ export default function About() {
     [{ x: 0, y: -115.48 }, { x: -100, y: -115.48 }, { x: -200, y: -115.48 }, { x: -300, y: -115.48 }],
     [{ x: 50, y: -173.22 }, { x: -50, y: -173.22 }, { x: -150, y: -173.22 }, { x: -250, y: -173.22 }],
     [{ x: 0, y: -231.96 }, { x: -100, y: -231.96 }, { x: -200, y: -231.96 }, { x: -300, y: -231.96 }],
-    [{ x: 50, y: -289.70 }, { x: -50, y: -289.70 }, { x: -150, y: -289.70 }, { x: -250, y: -289.70 }] // Dòng mới thêm vào
+    [{ x: 50, y: -289.70 }, { x: -50, y: -289.70 }, { x: -150, y: -289.70 }, { x: -250, y: -289.70 }],
+    [{ x: 0, y: -347.44 }, { x: -100, y: -347.44 }, { x: -200, y: -347.44 }, { x: -300, y: -347.44 }],
+    [{ x: 50, y: -405.18 }, { x: -50, y: -405.18 }, { x: -150, y: -405.18 }, { x: -250, y: -405.18 }] 
 ];
 
+
+const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect(); 
+        }
+      },
+      { threshold: 0.2 }
+    );
+    
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    
+    return () => observer.disconnect();
+  }, []);
 const images = [
   {
     url: 'https://hoangphucphoto.com/wp-content/uploads/2024/06/anh-giay-thumb.jpeg',
@@ -38,14 +59,30 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
     setTimeout(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
       setAnimationDirection('enter');
-    }, 300); 
+    }, 1000); 
   };
 
   return (
-    <div className="background">
+    <div ref={sectionRef} className={`background fade-in ${visible ? "show" : ""}`}>
     <h1 className='about_h1_color'>About</h1>
+    <motion.div
+    className="background-motion"
+    initial={{ opacity: 0, scale: 5.0 }}  
+    whileInView={{ opacity: 1, scale: 1 }} 
+    transition={{ duration: 5, ease: "easeOut" }}
+    viewport={{ once: true }}
+    >
+    
     <div className="content-container">
+   
       <div className="hex-container">
+      <motion.div
+          className="left-content"
+          initial={{ x: -100, opacity: 0, scale: 1.1 }} 
+          whileInView={{ x: 0, opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
         {hexagonRows.map((row, rowIndex) => (
           <div key={rowIndex} className="hexagon-row">
             {row.map((pos, index) => (
@@ -60,16 +97,28 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
             ))}
           </div>
         ))}
-      </div>
+       </motion.div>
+        
+    </div>
       <div className="button-container">
         <button className='animated-button' onClick={handleNextImage}>Next</button>
       </div>
+     
       <div className="image-content">
+      <motion.div
+          className="right-content"
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+          viewport={{ once: true }}
+        >
         <h2>{images[currentImageIndex].title}</h2>
         <h4 className='color_h4'>{images[currentImageIndex].content}</h4> 
         <button className='animated-button'>View</button>
+      </motion.div>
       </div>
     </div>
+    </motion.div>
   </div>
   );
 }

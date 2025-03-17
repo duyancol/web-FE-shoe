@@ -72,7 +72,7 @@
 
     "eslint-scope": "^7.1.1",
 
-    "framer-motion": "^11.11.13",
+    "framer-motion": "^11.18.2",
 
     "http-proxy-middleware": "^2.0.6",
 

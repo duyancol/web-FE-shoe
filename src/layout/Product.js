@@ -26,11 +26,14 @@ import Rating from '@mui/material/Rating';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import useClipboard from "react-use-clipboard";
 import ScrollToTop from './ScrollToTop';
+
+import { motion } from "framer-motion";
 export default function Product({input}) {
   const [loading, setLoading] = React.useState(false);
 const [query, setQuery] = React.useState('idle');
 const timerRef = React.useRef();
 const iduser = localStorage.getItem("id");
+
 const addCart=()=>{
   fetch(`${API_BASE_URL}/api/v1/auth/addCart?id=3`)
   .then(res => res.json())
@@ -479,6 +482,13 @@ React.useEffect(
             
                 
                 <div  className="product-grid-center">
+                <motion.div
+                          className="left-content"
+                          initial={{ x: -100, opacity: 0, scale: 5.0 }} 
+                          whileInView={{ x: 0, opacity: 1, scale: 1 }}
+                          transition={{ duration: 4, ease: "easeOut" }}
+                          viewport={{ once: true }}
+                        >
                   {filteredProducts
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row) => {
@@ -536,7 +546,7 @@ React.useEffect(
                        
                       );
                     })}
-                   
+                    </motion.div>
                 </div>
              
            
