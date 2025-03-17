@@ -15,17 +15,17 @@ export default function About() {
 const images = [
   {
     url: 'https://hoangphucphoto.com/wp-content/uploads/2024/06/anh-giay-thumb.jpeg',
-    title: 'Hình ảnh giày thể thao nổi bật.',
+    title: 'Featured sports shoe images',
     content: 'Athletic Sneakers: These trendy athletic sneakers are designed for both performance and style. They feature a lightweight, breathable upper and cushioned sole, making them perfect for workouts or casual outings. The sleek design ensures you stay comfortable while looking great on the go.'
   },
   {
     url: 'https://naidecor.vn/wp-content/uploads/2020/08/BST-GD-02.jpg',
-    title: 'Mẫu giày thời trang mới nhất.',
+    title: 'Latest fashion shoes.',
     content: 'Fashionable Casual Shoes: Step out in style with these fashionable casual shoes. Crafted with high-quality materials, they offer a perfect blend of comfort and elegance. The unique design and vibrant colors make them a versatile choice for any occasion, whether you are heading to work or meeting friends'
   },
   {
     url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5d4ADjx_pseuEaJRhjdOyDrs26GcHWiYSow&s',
-    title: 'Giày đi bộ dành cho phái đẹp.',
+    title: 'Women s walking shoes',
     content: 'Stylish Running Shoes: Elevate your running experience with these stylish running shoes. Engineered for optimal support and flexibility, they provide the perfect fit for any foot shape. With a modern design and striking colors, these shoes are not only functional but also a fashion statement for active individuals.'
   },
 ];

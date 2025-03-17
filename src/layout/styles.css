@@ -103,6 +103,15 @@
 .s{
   margin-top: 30px;
 }
+.product-info-cust{
+  position: fixed; 
+  z-index: 9999; 
+  background: #1E8EF0; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+ color: #fff;
+  
+}
+
   
 
   

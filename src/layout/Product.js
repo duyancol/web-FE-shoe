@@ -476,7 +476,7 @@ React.useEffect(
                          
                              ):<div className="product-grid1"> <img src={"https://raw.githubusercontent.com/duyancol/web-FE-shoe/main/src/layout/images/sold-removebg-preview%20(1).png"} ></img></div>}
                        
-                        <Link className='btn ' to={`/products/${row.id}`}><img src='../images/eye.png'></img></Link>
+                       
                         <div className="product-grid-head">
                         
                         <Box

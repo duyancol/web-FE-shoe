@@ -118,12 +118,15 @@ video:focus {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
-    color: rgb(182, 191, 10);
+    color: #1E8EF0;
 }
 .row1{
     width: 70%;
     
     margin: auto;
+}
+.back-ground{
+    background-color: #021325;
 }
 .hc1{
     font-size: 60px;

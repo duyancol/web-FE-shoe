@@ -22,6 +22,8 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+
+import { API_BASE_URL } from '../config';
 function ProductDetail({ onAddToCart, cartItemCount, open, handleClose, Alert, handleClick }) {
   const [product, setProduct] = useState({});
   const { id } = useParams();
@@ -44,7 +46,7 @@ function ProductDetail({ onAddToCart, cartItemCount, open, handleClose, Alert, h
   }, [id]);
 
   const loaddata = () => {
-    axios.get(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/getProduct/${id}`)
+    axios.get(`${API_BASE_URL}/api/v1/auth/getProduct/${id}`)
       .then((response) => {
         setProduct(response.data);
         localStorage.setItem('start', JSON.stringify(response.data.reportStart));
@@ -64,7 +66,7 @@ function ProductDetail({ onAddToCart, cartItemCount, open, handleClose, Alert, h
 
   const loadCheckreport = () => {
     const iduser = localStorage.getItem("id");
-    axios.get(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/getReport/${id}/${iduser}`)
+    axios.get(`${API_BASE_URL}/api/v1/auth/getReport/${id}/${iduser}`)
       .then((response) => {
 
         localStorage.setItem('checkReport', JSON.stringify(response.data));
@@ -109,7 +111,7 @@ function ProductDetail({ onAddToCart, cartItemCount, open, handleClose, Alert, h
       }
     }
     e.preventDefault();
-    await axios.post(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/addReportStar/${product.id}`, formData, config)
+    await axios.post(`${API_BASE_URL}/api/v1/auth/addReportStar/${product.id}`, formData, config)
 
     loaddata();
     handleClickOpenD()
@@ -125,7 +127,7 @@ function ProductDetail({ onAddToCart, cartItemCount, open, handleClose, Alert, h
 
   const sizes = [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45];
   return (
-    <div >
+    <div className='back-ground'>
       <Header cartItemCount={cartItemCount} />
       <div>
 
@@ -221,7 +223,7 @@ function ProductDetail({ onAddToCart, cartItemCount, open, handleClose, Alert, h
 
 
 
-          <p>{localStorage.getItem("start")}</p>
+          
 
           <p>
             The iconic Nike Free returns with more perforations and engineered
@@ -244,7 +246,7 @@ function ProductDetail({ onAddToCart, cartItemCount, open, handleClose, Alert, h
 
           <Link className="wishlist" to="/">Add to wishlist</Link>
 
-          {localStorage.getItem("checkReport") === "false" ? (<div>
+          {localStorage.getItem("checkReport") === "false" ? (<div className='back_gr_enluvation'>
             <h2>Can you give us a product review?</h2>
             <Box
               sx={{

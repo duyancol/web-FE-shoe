@@ -146,7 +146,7 @@ section .color:nth-child(3){
 
     /* backdrop-filter: blur(5px);
     border-top: 1px solid rgba(255, 255, 255, 0.5); */
-    background: rgba(240, 232, 76, 0.5);
+    background: #1e8ef094;
     transform: skewX(45deg) translateX(350px);
     transition: 2s;
 }

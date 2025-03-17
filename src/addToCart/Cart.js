@@ -35,7 +35,7 @@ import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import ButtonPaypal from './ButtonPaypal';
 
-// Khai báo ref cho các input
+import { API_BASE_URL } from '../config';
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -290,7 +290,7 @@ const handleWardChange = (event) => {
       phone:localStorage.getItem("phone"),
       price:localStorage.getItem("total")
     }));
-    axios.post("https://shop-shoe-1-heb5.onrender.com/api/v1/auth/save", {cart: userForm, listProduct: cartItems})
+    axios.post(`${API_BASE_URL}/api/v1/auth/save`, {cart: userForm, listProduct: cartItems})
       .then((response) => {
         console.log(response.data);
         alert("Đã lưu giỏ hàng thành công!");
