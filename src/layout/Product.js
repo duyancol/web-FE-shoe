@@ -21,7 +21,7 @@ import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 import { Link, useParams } from 'react-router-dom';
-
+import { API_BASE_URL } from '../config';
 import Rating from '@mui/material/Rating';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import useClipboard from "react-use-clipboard";
@@ -31,15 +31,12 @@ const [query, setQuery] = React.useState('idle');
 const timerRef = React.useRef();
 const iduser = localStorage.getItem("id");
 const addCart=()=>{
-  fetch(`http://localhost:8080/api/v1/auth/addCart?id=3`)
+  fetch(`${API_BASE_URL}/api/v1/auth/addCart?id=3`)
   .then(res => res.json())
   .then(
     (result) => {
      console.log(result)
     },
-    // Note: it's important to handle errors here
-    // instead of a catch() block so that we don't swallow
-    // exceptions from actual bugs in components.
     (error) => {
       // setIsLoaded(true);
       // setError(error);
@@ -90,14 +87,10 @@ React.useEffect(
         setQuery('success');
       }, 2000);
     };
-    // const {count}=useParams();
-   
-    // Note: the empty deps array [] means
-    // this useEffect will run once
-    // similar to componentDidMount()
+  
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
-    const baseURL = "https://shop-shoe-production.up.railway.app/api/v1/auth/get3ProductNew";
+    const baseURL = `${API_BASE_URL}/api/v1/auth/get3ProductNew`;
     const [rows, setRows] = useState([]);
     const [rowdata, setRowdata] = useState([]);
   
@@ -139,16 +132,14 @@ React.useEffect(
   
   
     useEffect(() => {
-      fetch("https://shop-shoe-production.up.railway.app/api/v1/auth/get3ProductNew")
+      fetch(`${API_BASE_URL}/api/v1/auth/get3ProductNew`)
         .then(res => res.json())
         .then(
           (result) => {
             setIsLoaded(true);
             setItems(result);
           },
-          // Note: it's important to handle errors here
-          // instead of a catch() block so that we don't swallow
-          // exceptions from actual bugs in components.
+         
           (error) => {
             setIsLoaded(true);
             setError(error);
@@ -157,16 +148,14 @@ React.useEffect(
     }, [])
     const clickCart1=()=>{
       const count =document.getElementsByClassName("count").length +3;
-      fetch(`https://shop-shoe-production.up.railway.app/api/v1/auth/getNext3Product/${count}/0`)
+      fetch(`${API_BASE_URL}/api/v1/auth/getNext3Product/${count}/0`)
       .then(res => res.json())
       .then(
         (result) => {
           setIsLoaded(true);
           setRows(result);
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
+        
         (error) => {
           setIsLoaded(true);
           setError(error);

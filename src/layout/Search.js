@@ -13,11 +13,11 @@ import { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Box from "@mui/material/Box";
-
+import { API_BASE_URL } from '../config';
 export default function AutoCompleter() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const baseURL = "http://localhost:8080/api/v1/auth/students1";
+  const baseURL = `${API_BASE_URL}/api/v1/auth/students1`;
   const [rows, setRows] = useState([]);
   const [rowdata, setRowdata] = useState([]);
 

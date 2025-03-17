@@ -38,7 +38,7 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
     setTimeout(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
       setAnimationDirection('enter');
-    }, 300); // Thời gian để chuyển đổi hiệu ứng (300ms)
+    }, 300); 
   };
 
   return (
@@ -51,7 +51,7 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
             {row.map((pos, index) => (
               <div
                 key={index}
-                className={`hexagon ${animationDirection}`} // Thêm lớp cho hiệu ứng
+                className={`hexagon ${animationDirection}`} 
                 style={{
                   backgroundImage: `url('${images[currentImageIndex].url}')`,
                   backgroundPosition: `${pos.x}px ${pos.y}px`,
@@ -66,7 +66,7 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
       </div>
       <div className="image-content">
         <h2>{images[currentImageIndex].title}</h2>
-        <h4 className='color_h4'>{images[currentImageIndex].content}</h4> {/* Hiển thị nội dung của ảnh */}
+        <h4 className='color_h4'>{images[currentImageIndex].content}</h4> 
         <button className='animated-button'>View</button>
       </div>
     </div>

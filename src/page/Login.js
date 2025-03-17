@@ -25,6 +25,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import { GoogleLogin } from '@react-oauth/google';
 import jwt_decode from 'jwt-decode'
 import { googleLogout } from '@react-oauth/google';
+import { API_BASE_URL } from '../config';
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -92,7 +93,7 @@ export default function Login({cartItemCount}) {
     const login = () => {
       handleOpen()
 
-        axios(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/authenticate`, {
+        axios(`${API_BASE_URL}/api/v1/auth/authenticate`, {
           method: "POST", 
           data: {
               email :email,
@@ -111,11 +112,11 @@ export default function Login({cartItemCount}) {
 
 // Kiểm tra giá trị roles
 if (roles && roles.length > 0 && roles[0].authority === 'USER') {
-  // Trường hợp roles có giá trị và authority là 'USER'
+
   // Thực hiện các công việc cần thiết ở đây
  navigate("/")
 } else {
-  // Trường hợp khác
+ 
   
   setOpenD(true)
 }
@@ -221,7 +222,7 @@ if (roles && roles.length > 0 && roles[0].authority === 'USER') {
                    setUser({isLogin : true})
                     // fetch('http://localhost:8080/api/v1/auth/google', { method: 'POST', body: JSON.stringify({ googleIdToken: credentialResponse.credential }) });
                     
-        axios(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/google/${credentialResponse.credential}`, {
+        axios(`${API_BASE_URL}/api/v1/auth/google/${credentialResponse.credential}`, {
           method: "POST", 
          
         })
