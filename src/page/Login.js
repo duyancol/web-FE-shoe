@@ -26,12 +26,13 @@ import { GoogleLogin } from '@react-oauth/google';
 import jwt_decode from 'jwt-decode'
 import { googleLogout } from '@react-oauth/google';
 import { API_BASE_URL } from '../config';
+
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 export default function Login({cartItemCount}) {
   const [openD, setOpenD] = React.useState(false);
-
+  window.scrollTo(0, 0);
   const handleClickOpenD = () => {
     setOpenD(true);
   };
@@ -139,7 +140,7 @@ if (roles && roles.length > 0 && roles[0].authority === 'USER') {
      }
 
   return (
-    <div>
+    <div className='back_gr'>
                    < >
             
              
@@ -265,6 +266,7 @@ if (roles && roles.length > 0 && roles[0].authority === 'USER') {
           }
          
             </>
+            <Footer></Footer>
     </div>
   )
 }

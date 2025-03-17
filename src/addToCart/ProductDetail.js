@@ -22,7 +22,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-
+import { motion } from "framer-motion";
 import { API_BASE_URL } from '../config';
 function ProductDetail({ onAddToCart, cartItemCount, open, handleClose, Alert, handleClick }) {
   const [product, setProduct] = useState({});
@@ -39,6 +39,7 @@ function ProductDetail({ onAddToCart, cartItemCount, open, handleClose, Alert, h
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     loaddata();
     loadCheckreport();
 
@@ -127,7 +128,13 @@ function ProductDetail({ onAddToCart, cartItemCount, open, handleClose, Alert, h
 
   const sizes = [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45];
   return (
+    
     <div className='back-ground'>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }} 
+      animate={{ opacity: 1, y: 0 }}  
+      transition={{ duration: 2 }}  
+    >
       <Header cartItemCount={cartItemCount} />
       <div>
 
@@ -300,7 +307,7 @@ function ProductDetail({ onAddToCart, cartItemCount, open, handleClose, Alert, h
         controlsList="nodownload"
         poster={gifFile}
       />
-
+      </motion.div>
 
       <Footer></Footer>
     </div>

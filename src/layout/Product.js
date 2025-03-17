@@ -11,7 +11,7 @@ import TableRow from "@mui/material/TableRow";
 import Card from "@mui/material/Card";
 import axios from "axios";
 import Modal from "react-modal";
-
+import ScrollNumber from 'antd/es/badge/ScrollNumber';
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Box from "@mui/material/Box";
@@ -25,6 +25,7 @@ import { API_BASE_URL } from '../config';
 import Rating from '@mui/material/Rating';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import useClipboard from "react-use-clipboard";
+import ScrollToTop from './ScrollToTop';
 export default function Product({input}) {
   const [loading, setLoading] = React.useState(false);
 const [query, setQuery] = React.useState('idle');
@@ -58,35 +59,61 @@ React.useEffect(
     const handleClickQuery = () => {
       if (timerRef.current) {
         clearTimeout(timerRef.current);
-        clickCart1()
       }
-    
-      if (query !== 'idle') {
-        setQuery('idle');
+      if (query !== "idle") {
+        setQuery("idle");
         return;
       }
-    
-      setQuery('progress');
       timerRef.current = window.setTimeout(() => {
-        setQuery('success');
-      }, 2000);
+        setQuery("success");
+      }, 1000);
+      clickCart1();
     };
-    const handleClickQuery1 = (id) => {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
+      const clickCart1 = () => {
+        const count = document.getElementsByClassName("count").length + 4;
+    
+        if (!API_BASE_URL) {
+          console.error("API_BASE_URL không hợp lệ!");
+          return;
+        }
+        setQuery("progress");
+        fetch(`${API_BASE_URL}/api/v1/auth/getNext3Product/${count}/0`)
+          .then(res => res.json())
+          .then(
+            (result) => {
+              setIsLoaded(true);
+              
+              setRows(result);
+            },
+            (error) => {
+              
+              setError(error);
+            }
+          );
+      };
+    
       
-      }
+      
+      
     
-      if (query !== 'idle') {
-        setQuery('idle');
-        return;
-      }
+      
     
-      setQuery('progress');
-      timerRef.current = window.setTimeout(() => {
-        setQuery('success');
-      }, 2000);
-    };
+    // const handleClickQuery1 = (id) => {
+    //   if (timerRef.current) {
+    //     clearTimeout(timerRef.current);
+      
+    //   }
+    
+    //   if (query !== 'idle') {
+    //     setQuery('idle');
+    //     return;
+    //   }
+    
+    //   setQuery('progress');
+    //   timerRef.current = window.setTimeout(() => {
+    //     setQuery('success');
+    //   }, 2000);
+    // };
   
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -146,21 +173,7 @@ React.useEffect(
           }
         )
     }, [])
-    const clickCart1=()=>{
-      const count =document.getElementsByClassName("count").length +3;
-      fetch(`${API_BASE_URL}/api/v1/auth/getNext3Product/${count}/0`)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setRows(result);
-        },
-        
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      )}
+   
      
         const [value, setValue] = React.useState(5);
         const [filteredProducts, setFilteredProducts] = useState([]);
@@ -309,7 +322,7 @@ React.useEffect(
     <div>
     
     <div className="container">
-    
+    <ScrollToTop></ScrollToTop>
 
     <Modal
     isOpen={modalIsOpen}
@@ -558,9 +571,38 @@ React.useEffect(
                     </Fade>
                   )}
                 </Box>
-                <Button className="save-btn" onClick={handleClickQuery} sx={{ m: 2 }}>
-                  {query !== 'idle' ? 'Load more' : 'Load more'}
-                </Button>
+                <Button
+                className="save-btn"
+                onClick={handleClickQuery}
+                sx={{
+                  m: 2,
+                  px: 3,
+                  py: 1,
+                  borderRadius: "8px",
+                  fontWeight: "bold",
+                  fontSize: "16px",
+                  textTransform: "none",
+                  background: "linear-gradient(135deg, #1E8EF0, #041C42)",
+                  color: "white",
+                  boxShadow: "0px 4px 10px rgba(255, 120, 150, 0.3)",
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    background: "linear-gradient(135deg, #041C42, #1E8EF0)",
+                    transform: "scale(1.05)",
+                  },
+                  "&:disabled": {
+                    background: "#ccc",
+                    color: "#666",
+                    boxShadow: "none",
+                  },
+                }}
+              >
+                {query === "progress" ? (
+                  <CircularProgress size={24} sx={{ color: "white" }} />
+                ) : (
+                  "Load more"
+                )}
+              </Button>
               </Box>
                 
                 

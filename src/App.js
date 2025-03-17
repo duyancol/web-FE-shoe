@@ -37,8 +37,8 @@ import ResetpassWord from './page/ResetpassWord';
 import PageNotError from './page/PageNotError';
 import FeedBack from './layout/FeedBack';
 import Profile from './layout/Profile';
-import ScrollToTop from './page/ScrollToTop';
-
+import ScrollToTop from './layout/ScrollToTop';
+import ScrollNumber from 'antd/es/badge/ScrollNumber';
 import { AnimatePresence, motion } from 'framer-motion';
 
 
@@ -176,9 +176,11 @@ const initialOptions = {
   return (
    
     <div className="App" key={user.isLogin}>  
+   
       <Router>
-      <ScrollToTop />
+      
       <AnimatePresence mode="wait">
+      <ScrollToTop></ScrollToTop>
         <Routes>
           <Route exact path='/' element={< Home cartItemCount={cartItemCount}/ > }> </Route>
           <Route className="node"  path='/feedback' element={<FeedBack />}></Route>
@@ -187,9 +189,7 @@ const initialOptions = {
           <Route exact path='/login' element={<Login cartItemCount={cartItemCount}/>}> </Route>
           <Route exact path='/register' element={<Register cartItemCount={cartItemCount}/>}> </Route>
           <Route exact path='/addProduct' element={<AddProduct/>}></Route>
-          
-        <Route exact path="/doakboard" element={<Dankboad></Dankboad>} />
-         
+          <Route exact path="/doakboard" element={<Dankboad></Dankboad>} />
         <Route className="node" exact path='/fogotPassWord' element={<ForgotPassWord/>}></Route>
         <Route className="node" exact path='/reset_password/:token' element={<ResetpassWord />}></Route>
           <Route className="node" exact path='/getProduct/:id' element={<ViewProduct />}></Route>
@@ -229,13 +229,15 @@ const initialOptions = {
                    />
                  
                 } />
+                
          
         </Routes> 
-    
+   
      
         </AnimatePresence>
+        
       </Router>
-     
+      
       
     </div>
   
