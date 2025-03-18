@@ -13,11 +13,13 @@ import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import Slide from '@mui/material/Slide';
 import Header from "../layout/Header";
-
+import { API_BASE_URL } from '../config';
 import Product from '../layout/Product';
 import MegaMenu from '../layout/MegaMenu';
 import Footer from '../layout/Footer';
 import axios from 'axios';
+import BottomBar from '../layout/BottomBar';
+import { motion } from "framer-motion";
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -41,10 +43,7 @@ export default function OrderHistory({cartItemCount}) {
     if (status!=="1") {
       alert("You cannot cancel your order because it is in transit !");
     } else {
-      // Xử lý submit
-     
-
-      axios(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/updateStatusHuy?id=${id}
+      axios(`${API_BASE_URL}/api/v1/auth/updateStatusHuy?id=${id}
       `, {
         method: "PUT", 
         data: {
@@ -78,7 +77,7 @@ export default function OrderHistory({cartItemCount}) {
       
     }, []);
     const loadOder = (d)=>{
-      fetch(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/order/${iduser}`)
+      fetch(`${API_BASE_URL}/api/v1/auth/order/${iduser}`)
       .then(res => res.json())
       .then(data => setOrder(data))
       .catch(err => console.error(err));
@@ -87,7 +86,7 @@ export default function OrderHistory({cartItemCount}) {
     const oderDetailID = (d)=>{
       handleOpenL();
       handleClickOpen();
-      fetch(`https://shop-shoe-1-heb5.onrender.com/api/v1/auth/cart/${d}`)
+      fetch(`${API_BASE_URL}/api/v1/auth/cart/${d}`)
         .then(res => res.json())
         .then(data => setOrderDetail(data))
         .catch(err => console.error(err));
@@ -123,7 +122,17 @@ export default function OrderHistory({cartItemCount}) {
   
   
     return (
-      <div>
+      <div className='bg_order'>
+      <BottomBar></BottomBar>
+     <Header cartItemCount={cartItemCount} />
+      <MegaMenu></MegaMenu>
+       <motion.div
+                className="left-content"
+                initial={{ y: 100, opacity: 0 }} 
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
      
         {order.map((items, index) => (
           
@@ -310,7 +319,7 @@ export default function OrderHistory({cartItemCount}) {
           </div>
         
         ))}
-       
+        </motion.div>
       </div>
     );
   }

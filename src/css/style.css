@@ -152,6 +152,7 @@ body{
 }
 .vticker_li{
 	margin-left: 10px;
+	margin-top: -2.5px;
 }
 .top-header-right{
 	float: right;
@@ -4389,5 +4390,8 @@ image-content h2 {
   transform: translateX(calc(70px * 4));
 }
 .bg_cart{
+	background-color: #021325;
+}
+.bg_order{
 	background-color: #021325;
 }

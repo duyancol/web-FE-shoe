@@ -23,7 +23,7 @@ export default function MegaMenu() {
         <div className="header-row container" role="navigation" aria-label="Main">
           <div className="header-left">
             <div className="logo">
-              <img className='logonImg' src='./images/logo.png' alt='Logo' />
+              <img className='logonImg' src='https://raw.githubusercontent.com/duyancol/web-FE-shoe/refs/heads/main/src/images/logo.png' alt='Logo' />
             </div>
           </div>
           <div className="header-right">
