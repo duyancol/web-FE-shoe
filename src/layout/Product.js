@@ -28,6 +28,8 @@ import useClipboard from "react-use-clipboard";
 import ScrollToTop from './ScrollToTop';
 
 import { motion } from "framer-motion";
+import CartButton from './CartButton';
+import BottomBar from './BottomBar';
 export default function Product({input}) {
   const [loading, setLoading] = React.useState(false);
 const [query, setQuery] = React.useState('idle');
@@ -486,7 +488,7 @@ React.useEffect(
                           className="left-content"
                           initial={{ x: -100, opacity: 0, scale: 5.0 }} 
                           whileInView={{ x: 0, opacity: 1, scale: 1 }}
-                          transition={{ duration: 4, ease: "easeOut" }}
+                          transition={{ duration: 3, ease: "easeOut" }}
                           viewport={{ once: true }}
                         >
                   {filteredProducts
@@ -625,6 +627,7 @@ React.useEffect(
 <div className='btn-list-oder'>
    
 
+<BottomBar></BottomBar>
 </div>
     </div>
   )

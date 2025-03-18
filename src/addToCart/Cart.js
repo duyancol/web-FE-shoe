@@ -34,8 +34,9 @@ import { useNavigate } from 'react-router-dom';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import ButtonPaypal from './ButtonPaypal';
-
+import { motion } from "framer-motion";
 import { API_BASE_URL } from '../config';
+import BottomBar from '../layout/BottomBar';
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -343,11 +344,18 @@ const handleWardChange = (event) => {
     console.error('Google Sign-In failed:', error);
   };
   return (
-    <div>
-
+    <div className="bg_cart">
+<BottomBar></BottomBar>
     <PayPalScriptProvider options={initialOptions}>
     <Header cartItemCount={cartItemCount} />
     <MegaMenu></MegaMenu>
+    <motion.div
+    className="left-content"
+    initial={{ x: -100, opacity: 0, scale: 1.1 }} 
+    whileInView={{ x: 0, opacity: 1, scale: 1 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+    viewport={{ once: true }}
+  >
     <Dialog
     fullScreen
     open={openf}
@@ -639,6 +647,7 @@ const handleWardChange = (event) => {
           </div>
         </div>
       </div>
+      </motion.div>
     <Footer></Footer>
     </PayPalScriptProvider>
     </div>

@@ -1,11 +1,4 @@
 
-
-
-
-
-
-
-
 .row2 {
     display: flex;
     margin: 0 60px 0 60px;
@@ -25,14 +18,9 @@
     flex-direction: row2;
     flex-wrap: wrap;
     justify-content: space-around;
+    background-color: white;
+    border-radius: 4px;
 }
-
-/* img {
-    width: 10%;
-} */
-
-
-
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -48,8 +36,8 @@
 }
 
 .button-checkout {
-    border: 1px solid black;
-    background-color: black;
+    border: 1px solid white;
+    background-color: #0C518C;
     text-align: center;
     color: white;
     border-radius: 16px;
@@ -62,7 +50,7 @@
 }
 
 .button-checkout:hover {
-    color: black;
+    color: rgb(255, 255, 255);
     background-color: white;
 }
 
@@ -96,7 +84,7 @@
     
 }
 .row3{
-    background-color: rgba(250, 235, 215, 0.6);
+    background-color: #1E8EF0;
     padding: 20px;
     border-radius: 10px;
     width: 90%;

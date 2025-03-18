@@ -9,6 +9,8 @@ import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import { motion } from "framer-motion";
+import BottomBar from './BottomBar';
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -198,6 +200,13 @@ const onSupmit= async(e)=>{
     <div>
     <section class="py-5 my-5">
     <div class="container">
+    <motion.div
+                              className="left-content"
+                           initial={{ x: -100, opacity: 0, scale: 5.0 }} 
+                           whileInView={{ x: 0, opacity: 1, scale: 1 }}
+                           transition={{ duration:1, ease: "easeOut" }}
+                           viewport={{ once: true }}
+                            >
         <h1 class="mb-5">Account Settings</h1>
         <div class="bg-white shadow rounded-lg d-block d-sm-flex">
             <div class="profile-tab-nav border-right">
@@ -378,7 +387,9 @@ const onSupmit= async(e)=>{
                     </div>
                 </div>
             </div>
+           
         </div>
+        </motion.div>
     </div>
     <Stack spacing={2} sx={{ width: '100%' }}>
     
@@ -389,7 +400,7 @@ const onSupmit= async(e)=>{
     </Snackbar>
   </Stack>
 </section>
-
+<BottomBar></BottomBar>
     </div>
   )
 }

@@ -40,6 +40,7 @@ import Profile from './layout/Profile';
 import ScrollToTop from './layout/ScrollToTop';
 import ScrollNumber from 'antd/es/badge/ScrollNumber';
 import { AnimatePresence, motion } from 'framer-motion';
+import BottomBar from './layout/BottomBar';
 
 
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -176,7 +177,7 @@ const initialOptions = {
   return (
    
     <div className="App" key={user.isLogin}>  
-   
+    
       <Router>
       
       <AnimatePresence mode="wait">
