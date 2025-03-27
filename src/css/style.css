@@ -4395,3 +4395,67 @@ image-content h2 {
 .bg_order{
 	background-color: #021325;
 }
+.about-mobile {
+	text-align: center;
+	padding: 20px;
+	background: #f5f5f5;
+  }
+  
+  .about-title {
+	font-size: 28px;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 20px;
+  }
+  
+  .image-container {
+	position: relative;
+	width: 100%;
+	max-width: 360px;
+	margin: 0 auto;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image {
+	width: 100%;
+	height: auto;
+	display: block;
+  }
+  
+  .image-overlay {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	color: white;
+	padding: 15px;
+	text-align: center;
+  }
+  
+  .image-overlay h2 {
+	font-size: 18px;
+	margin-bottom: 5px;
+  }
+  
+  .image-overlay p {
+	font-size: 14px;
+	margin-bottom: 10px;
+  }
+  
+  .animated-button {
+	background: #ff6b6b;
+	color: white;
+	border: none;
+	padding: 8px 16px;
+	font-size: 14px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background 0.3s ease-in-out;
+  }
+  
+  .animated-button:hover {
+	background: #ff4f4f;
+  }
+  

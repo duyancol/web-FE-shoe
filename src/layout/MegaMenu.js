@@ -80,11 +80,11 @@ export default function MegaMenu() {
                   <div className="mega-menu-col">
                     <h5>Menu block 1</h5>
                     <ul className="mega-sub-menu">
-                      <li><a href="#">Menu block item 1</a></li>
-                      <li><a href="#">Menu block item 2</a></li>
-                      <li><a href="#">Menu block item 3</a></li>
-                      <li><a href="#">Menu block item 4</a></li>
-                      <li><a href="#">Menu block item 5</a></li>
+                      <li><a href="#">Menu Shoe Male 1</a></li>
+                      <li><a href="#">Menu Shoe Feshnam 2</a></li>
+                      <li><a href="#">Menu block Children 3</a></li>
+                      <li><a href="#">Menu block Nike 4</a></li>
+                      <li><a href="#">Menu block Adidas 5</a></li>
                     </ul>
                   </div>
                   {/* Các cột khác */}
@@ -94,7 +94,7 @@ export default function MegaMenu() {
                 <a href="#">Services +</a>
                 <div className="sub-menu-wrapper">
                   <ul className="sub-menu">
-                    <li className="menu-item"><a href="#">Service 1</a></li>
+                    <li className="menu-item"><a href="#">Service 4</a></li>
                     <li className="menu-item"><a href="#">Service 2</a></li>
                     <li className="menu-item"><a href="#">Service 3</a></li>
                     <li className="menu-item"><a href="#">Service 4</a></li>
