@@ -1,1 +1,1 @@
-export const API_BASE_URL = "http://shop-shoe.codejud.id.vn";
+export const API_BASE_URL = "https://shop-shoe.codejud.id.vn";
